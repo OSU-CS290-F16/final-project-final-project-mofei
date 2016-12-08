@@ -1,0 +1,21 @@
+{{> header}}
+
+<main>
+   	<div class="info-container">
+	    <h3>To log in, select from the list of users below:</h3>
+
+	    {{> user-select}}
+    <div>
+    <div class="art-list">
+    	<div style="padding: 20px 20px;text-align: left;font-size: 38px;">article-list</div>
+	    {{#each articles}}
+	      <div class="art">
+		      <h3>{{this.title}}</h3>
+		      <p>{{this.content}}</p>
+		      <span>{{this.add_time}}</span>
+	      </div>
+	    {{/each}}
+  	</div>
+</main>
+
+{{> footer}}

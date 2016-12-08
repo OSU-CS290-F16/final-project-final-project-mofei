@@ -1,0 +1,23 @@
+<header>
+
+  <!-- The <i> tag below includes the sticky note icon from Font Awesome -->
+  <h1><a href="/">myblog</a></h1>
+
+  <nav>
+    <ul class="navbar-list">
+      <li class="navbar-item"><a href="/">Home</a></li>
+      <li class="navbar-item"><a href="#">About</a></li>
+      {{#if userName}}
+        <li class="navbar-item navbar-menu navbar-right">
+          <a href="#">{{userName}} <i class="fa fa-caret-down"></i></a>
+          <ul class="navbar-menu-list">
+            <li><a href="/">Logout</a></li>
+          </ul>
+        </li>
+      {{else}}
+        <li class="navbar-item navbar-right"><a href="/">Login</i></a></li>
+      {{/if}}
+    </ul>
+  </nav>
+
+</header>

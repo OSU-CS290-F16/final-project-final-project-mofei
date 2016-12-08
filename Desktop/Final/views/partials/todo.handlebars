@@ -1,0 +1,59 @@
+{{!--
+
+  You should write a Handlebars template here to generate a complete todo
+  note.  Remember the structure of the todo note from our previous assignments:
+
+  <section class="todo">
+    <h2>The header for the todo note goes here (the what value)</h2>
+    <div class="todo-body">
+      <p class="indent-wrapped"><span class="where">where: </span>some value</p>
+      <p class="indent-wrapped"><span class="when">when: </span>some value</p>
+      <p class="indent-wrapped"><span class="who">who: </span>some value</p>
+      <p>the details go here</p>
+    </div>
+    <div class="dismiss-button">&times;</div>
+  </section>
+
+  The where, when, and who fields and the details are only included if a value
+  is supplied.  Refer to the notes data in users-data.json to know how the
+  provided data will be structured.
+
+  A start for the note template is given to you below.
+
+  --}}
+  {{#each perData}} 
+    {{#each notes}} 
+        <section class="todo">
+          <h2>{{this.what}}</h2>
+          <div class="todo-body">
+            <p class="indent-wrapped"><span class="where">where: </span>{{this.body.where}}</p>
+            <p class="indent-wrapped"><span class="when">when: </span>{{this.body.when}}</p>
+            <p class="indent-wrapped"><span class="who">who: </span>{{this.body.who}}</p>
+            <p>{{this.body.details}}</p>
+          </div>
+          <div class="dismiss-button">&times;</div>
+        </section>
+    {{/each}}
+  {{/each}}
+  <script id="todo-template" type="text/html">
+    <section class="todo">
+      <h2>\{{what}}</h2>
+      <div class="todo-body">
+        <p class="indent-wrapped"><span class="where">where: </span>\{{where}}</p>
+        <p class="indent-wrapped"><span class="when">when: </span>\{{when}}</p>
+        <p class="indent-wrapped"><span class="who">who: </span>\{{who}}</p>
+        <p>\{{details}}</p>
+      </div>
+      <div class="dismiss-button">&times;</div>
+    </section>
+</script>
+{{!--
+<section class="todo">
+  <div class="dismiss-button">&times;</div>
+</section>
+<tr>
+    <td>{{points-time}}</td>
+    <td class="c-org">{{points-number}}</td>
+    <td>{{points-desc}}</td>
+</tr>
+--}}

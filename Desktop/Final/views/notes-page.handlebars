@@ -1,0 +1,26 @@
+{{!--
+
+  You should modify this template so that any existing notes for a user are
+  displayed when this page is rendered.
+
+  --}}
+
+{{> header}}
+
+<main>
+    <div class="art-list">
+    	<div style="padding: 20px 20px;text-align: left;font-size: 38px;">article-list</div>
+	    {{#each articles}}
+	      <div class="art art-{{this._id}}">
+		      <h3>{{this.title}}</h3>
+		      <p>{{this.content}}</p>
+		      <span>{{this.add_time}}</span><span data-title="{{this.title}}" data-content="{{this.content}}" class="change btn" data-id='{{this._id}}'>change</span><span class="del btn" data-id='{{this._id}}'>del</span>
+	      </div>
+	    {{/each}}
+  	</div>
+</main>
+
+
+{{> footer}}
+
+{{> add-note-modal}}

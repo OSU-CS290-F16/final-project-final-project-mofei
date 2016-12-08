@@ -1,0 +1,22 @@
+{{!--
+
+  You should complete this Handlebars template so that any users listed in
+  users-data.json are included in the select list below.  The template should
+  be implemented in such a way that the select list will change if the data
+  in users-data.json changes.
+
+  The value corresponding to each element in the select list needs to be set
+  up in a particular way.  Refer to the function handleUserSelection() in
+  public/index.js to help you figure out what the values should look like.
+
+  --}}
+
+<div class="user-select-container">
+  <select id="user-select">
+
+    <option value="" disabled selected>Select a user</option>
+    {{#each usersData}} 
+      <option value="{{this.name}}">{{this.name}}</option>
+    {{/each}}
+  </select>
+</div>
